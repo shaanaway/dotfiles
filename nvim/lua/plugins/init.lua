@@ -50,7 +50,6 @@ require("lazy").setup({
     {
         "NeogitOrg/neogit",
         dependencies = { "nvim-lua/plenary.nvim", "sindrets/diffview.nvim", "nvim-telescope/telescope.nvim" },
-        config = true,
     },
     "axieax/urlview.nvim", -- view urls
     "nvim-tree/nvim-web-devicons", -- nerd font tings

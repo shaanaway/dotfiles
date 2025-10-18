@@ -37,4 +37,4 @@ SETUVAR fish_pager_color_selected_background:\x2dr
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/home/twink/\x2elocal/bin\x1e/home/twink/\x2elocal/share/cargo/bin
+SETUVAR fish_user_paths:/home/shaan/\x2elocal/bin\x1e/home/shaan/\x2elocal/share/cargo/bin

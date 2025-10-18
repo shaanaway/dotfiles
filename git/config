@@ -1,0 +1,7 @@
+[init]
+	defaultBranch = main
+[user]
+	email = gurshaan.sandhu22@gmail.com
+	name = shaanaway
+[credential]
+	helper = cache

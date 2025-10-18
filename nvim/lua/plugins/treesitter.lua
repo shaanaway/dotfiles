@@ -1,7 +1,6 @@
 local opt = vim.opt
 
 opt.foldmethod = "expr"
-vim.opt.foldtext = 'v:lua.vim.treesitter.foldtext()'
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldtext = "v:lua.vim.treesitter.foldtext()"
 
