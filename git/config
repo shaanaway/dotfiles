@@ -4,4 +4,4 @@
 	email = gurshaan.sandhu22@gmail.com
 	name = shaanaway
 [credential]
-	helper = cache
+	helper = /usr/lib/git-core/git-credential-libsecret
