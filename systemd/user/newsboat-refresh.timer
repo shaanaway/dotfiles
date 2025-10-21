@@ -1,0 +1,9 @@
+[Unit]
+Description=Refresh RSS Feeds Daily
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target
