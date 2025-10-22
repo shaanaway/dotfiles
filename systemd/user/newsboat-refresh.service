@@ -3,4 +3,4 @@ Description=Refresh RSS Feeds
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/newsboat -r
+ExecStart=/usr/bin/newsboat -x reload

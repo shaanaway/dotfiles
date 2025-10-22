@@ -1,6 +1,10 @@
-# systemd timer for this
+# i use a systemd timer for this
+# to avoid sending too many requests
 auto-reload no
 reload-threads 4
+
+cleanup-on-quit yes
+text-width 80
 # vim-ish keys
 bind-key h quit
 bind-key j down
