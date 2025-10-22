@@ -1,0 +1,9 @@
+(
+    output: "eDP-1",
+    source: Path("/home/twink/.local/clone/catppuccin/wallpapers2/cat_pacman.png"),
+    filter_by_theme: false,
+    rotation_frequency: 3600,
+    filter_method: Lanczos,
+    scaling_mode: Zoom,
+    sampling_method: Alphanumeric,
+)
