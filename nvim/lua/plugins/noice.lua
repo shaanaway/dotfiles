@@ -1,30 +1,24 @@
-require("noice").setup({
-  lsp = {
-    override = {
-      ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-      ["vim.lsp.util.stylize_markdown"] = true,
+return {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+        lsp = {
+            hover = {
+                enabled = true,
+                silent = true,
+            },
+            signature = {
+                enabled = true,
+            },
+        },
+        presets = {
+            bottom_search = true,
+            command_palette = true,
+            lsp_doc_border = true,
+        },
     },
-    hover = {
-      enabled = true,
-      silent = true,
-      view = "hover",
+    dependencies = {
+        "MunifTanjim/nui.nvim",
+        "rcarriga/nvim-notify",
     },
-  },
-  views = {
-    hover = {
-      border = {
-        style = "rounded",
-      },
-      size = {
-        max_width = 80,
-        max_height = 40,
-      },
-      win_options = {
-        wrap = true,
-      },
-    },
-  },
-  presets = {
-    lsp_doc_border = true,
-  },
-})
+}

@@ -22,22 +22,11 @@ require("lazy").setup({
     { "catppuccin/nvim", name = "catppuccin" }, -- best colourscheme
     "nvim-lualine/lualine.nvim", -- better status bar
 
+    require("plugins.noice"),
     "neovim/nvim-lspconfig", -- LSP defaults
     "mbbill/undotree", -- better undo, i :heart_hands: vimscript
     { "nvim-mini/mini.pairs", version = false },
     "rcarriga/nvim-notify",
-    {
-        "folke/noice.nvim",
-        event = "VeryLazy",
-        opts = {
-            -- add any opts here
-        },
-        dependencies = {
-            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-            "MunifTanjim/nui.nvim",
-            "rcarriga/nvim-notify",
-        },
-    },
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
@@ -84,5 +73,4 @@ require("markdown").setup()
 require("plugins.telescope")
 require("plugins.treesitter")
 require("plugins.conform")
-require("plugins.noice")
 require("plugins.neogit")
