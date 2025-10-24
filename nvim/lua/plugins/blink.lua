@@ -1,6 +1,6 @@
 return {
     "saghen/blink.cmp",
-    dependencies = { "rafamadriz/friendly-snippets" },
+    dependencies = { "L3MON4D3/LuaSnip", version = "2.x" },
 
     -- use a release tag to download pre-built binaries
     version = "1.*",
@@ -17,6 +17,7 @@ return {
         completion = {
             documentation = { auto_show = true },
         },
+        snippets = { preset = "luasnip"},
         sources = {
             default = { "lsp", "path", "snippets", "buffer" },
         },
