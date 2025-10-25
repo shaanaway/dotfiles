@@ -17,7 +17,7 @@ return {
         completion = {
             documentation = { auto_show = true },
         },
-        snippets = { preset = "luasnip"},
+        snippets = { preset = "luasnip" },
         sources = {
             default = { "lsp", "path", "snippets", "buffer" },
         },

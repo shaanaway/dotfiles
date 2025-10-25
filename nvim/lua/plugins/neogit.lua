@@ -1,3 +1,3 @@
 require("neogit").setup({
-    graph_style = "kitty"
+    graph_style = "kitty",
 })
