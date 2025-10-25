@@ -10,15 +10,10 @@ require("catppuccin").setup({
     },
     custom_highlights = function(colors)
         return {
-            CursorLine = { bg = "#313245" }, -- surface 0, hack in kitty to make this col transparent
+            CursorLine = { bg = "#313244" },
         }
     end,
-    integrations = {
-        which_key = true,
-        noice = true,
-        notify = true,
-        treesitter_context = true,
-    },
+    auto_integrations = true,
 })
 vim.cmd.colorscheme("catppuccin")
 require("lualine").setup({
