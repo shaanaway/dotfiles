@@ -1,15 +1,18 @@
+-- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
-        lazypath,
-    })
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
 end
-
 vim.opt.rtp:prepend(lazypath)
 
 -- gotta do this here or stuff gets weird
@@ -23,7 +26,6 @@ require("lazy").setup({
     "nvim-lualine/lualine.nvim", -- better status bar
 
     require("plugins.noice"),
-    "neovim/nvim-lspconfig", -- LSP defaults
     "mbbill/undotree", -- better undo, i :heart_hands: vimscript
     { "nvim-mini/mini.pairs", version = false },
     "rcarriga/nvim-notify",
@@ -62,6 +64,9 @@ require("lazy").setup({
     require("plugins.blink"),
     require("plugins.vimtex"),
     require("plugins.yazi"),
+
+    -- put this at the end so it dont override stuff
+    "neovim/nvim-lspconfig", -- LSP defaults
 })
 
 require("ibl").setup()
@@ -74,3 +79,4 @@ require("plugins.telescope")
 require("plugins.treesitter")
 require("plugins.conform")
 require("plugins.neogit")
+require("luasnip.loaders.from_lua").load({ paths = vim.fn.stdpath("config") .. "/lua/snippets" })
