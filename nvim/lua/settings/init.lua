@@ -1,5 +1,10 @@
-require("settings.pretty")
+require("settings.lazy")
+require("settings.colourscheme")
 require("settings.keybinds")
+require("settings.telescope")
+require("settings.treesitter")
+require("settings.conform")
+require("settings.neogit")
 vim.opt.number = true -- line number
 vim.opt.relativenumber = true -- distance from current line
 vim.opt.hlsearch = false -- no highlight on search
@@ -17,9 +22,9 @@ vim.opt.foldenable = false -- disables folding on file open, still possible manu
 vim.opt.mouse = "nvi"
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "line,number"
-
-vim.opt.scrolloff = 10 -- dont have to go all the way up/down to scroll
+--vim.opt.scrolloff = 10 -- dont have to go all the way up/down to scroll
 --vim.opt.colorcolumn = "80" -- shows when you're close to 80 chars
+
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     pattern = { "*" },
     callback = MiniTrailspace.trim,

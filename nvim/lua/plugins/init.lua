@@ -1,34 +1,12 @@
--- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-    local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-    local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-    if vim.v.shell_error ~= 0 then
-        vim.api.nvim_echo({
-            { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-            { out, "WarningMsg" },
-            { "\nPress any key to exit..." },
-        }, true, {})
-        vim.fn.getchar()
-        os.exit(1)
-    end
-end
-vim.opt.rtp:prepend(lazypath)
-
--- gotta do this here or stuff gets weird
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
-require("lazy").setup({
+return {
     "nvim-lua/plenary.nvim", -- lua helper library
     "MunifTanjim/nui.nvim", -- UI library
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 }, -- best colourscheme
     "nvim-lualine/lualine.nvim", -- better status bar
 
-    require("plugins.noice"),
     "mbbill/undotree", -- better undo, i :heart_hands: vimscript
-    { "nvim-mini/mini.pairs", version = false },
-    { "nvim-mini/mini.trailspace", version = false }, -- highlight trailing spaces
+    { "nvim-mini/mini.pairs", version = false, opts = {} },
+    { "nvim-mini/mini.trailspace", version = false, opts = {} }, -- highlight trailing spaces
     "rcarriga/nvim-notify",
     {
         "folke/which-key.nvim",
@@ -49,34 +27,13 @@ require("lazy").setup({
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     "nvim-treesitter/nvim-treesitter-context", -- shows current function at top of buf
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-    "MeanderingProgrammer/render-markdown.nvim",
+    { "MeanderingProgrammer/render-markdown.nvim", opts = {} },
     { "tadmccorkle/markdown.nvim", event = "VeryLazy" },
-
     -- nudges when you use unoptimal movement
     { "m4xshen/hardtime.nvim", lazy = false, dependencies = { "MunifTanjim/nui.nvim" }, opts = {} },
     "unblevable/quick-scope", -- 'f' helper
     -- typing trainer
     { "nvzone/typr", dependencies = "nvzone/volt", opts = {}, cmd = { "Typr", "TyprStats" } },
-
     "stevearc/conform.nvim", -- auto format code files
-    require("plugins.blink"),
-    require("plugins.vimtex"),
-    require("plugins.yazi"),
-
-    -- put this at the end so it dont override stuff
     "neovim/nvim-lspconfig", -- LSP defaults
-    install = { colorscheme = { "catppuccin-mocha" } },
-})
-
-require("ibl").setup()
-require("mini.pairs").setup()
-require("mini.trailspace").setup()
-require("markdown").setup()
-
--- most files i put these up top
--- but for plugins they gotta be down low
-require("plugins.telescope")
-require("plugins.treesitter")
-require("plugins.conform")
-require("plugins.neogit")
-require("luasnip.loaders.from_lua").load({ paths = vim.fn.stdpath("config") .. "/lua/snippets" })
+}
