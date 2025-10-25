@@ -14,10 +14,13 @@ vim.opt.smartindent = true
 vim.opt.wrap = false -- no wrapping text
 vim.opt.clipboard = "unnamedplus" -- sys clipboard
 vim.opt.foldenable = false -- disables folding on file open, still possible manually
-vim.opt.winborder = "rounded"
 vim.opt.mouse = "nvi"
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "line,number"
 
 vim.opt.scrolloff = 10 -- dont have to go all the way up/down to scroll
 --vim.opt.colorcolumn = "80" -- shows when you're close to 80 chars
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    pattern = { "*" },
+    callback = MiniTrailspace.trim,
+})
