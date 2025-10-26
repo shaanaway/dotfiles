@@ -1,4 +1,3 @@
-require("settings.lazy")
 require("settings")
 require("lsp")
 -- load snippets
