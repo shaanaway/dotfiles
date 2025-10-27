@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
     "stevearc/conform.nvim", -- auto format code files
     opts = {

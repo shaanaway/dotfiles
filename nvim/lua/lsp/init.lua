@@ -39,6 +39,8 @@ vim.lsp.config("lua_ls", {
                 checkThirdParty = false,
                 library = {
                     vim.env.VIMRUNTIME,
+                    "${3rd}/luv/library",
+                    vim.fn.stdpath("data") .. "/lazy",
                 },
             },
         })

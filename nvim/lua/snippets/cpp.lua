@@ -4,7 +4,6 @@ local text = ls.text_node
 local insert = ls.insert_node
 local func = ls.function_node
 
--- Helper functions
 local function filename()
     return vim.fn.expand("%:t") or "FileName.cpp"
 end
@@ -14,7 +13,7 @@ local function today()
 end
 
 return {
-    snip("template", {
+    snip("compsci", {
         text({ "/*", " * Program Name: " }),
         func(filename, {}),
         text({ "", " * Author:       Gurshaan Sandhu", " * Date:         " }),

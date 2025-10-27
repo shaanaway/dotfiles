@@ -1,8 +1,12 @@
+---@type LazySpec
 return {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
         lsp = {
+            progress = {
+                enabled = false,
+            },
             hover = {
                 enabled = true,
                 silent = true,

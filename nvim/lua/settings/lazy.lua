@@ -24,6 +24,6 @@ require("lazy").setup({
         { import = "plugins" },
     },
     install = {
-        colorscheme = { "catppuccin", "vim" },
+        colorscheme = { "catppuccin" },
     },
 })
