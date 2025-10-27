@@ -16,7 +16,7 @@ application/x-extension-shtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
 application/x-extension-xhtml=firefox.desktop
 application/x-ogg=mpv.desktop
-application/x-terminal-emulator=kitty.desktop
+application/x-terminal-emulator=com.mitchellh.ghostty.desktop
 application/xhtml+xml=firefox.desktop
 audio/aac=mpv.desktop
 audio/ac3=mpv.desktop
@@ -113,6 +113,4 @@ x-scheme-handler/discord-712465656758665259=discord-712465656758665259.desktop
 x-scheme-handler/discord-719647875465871400=discord-719647875465871400.desktop
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
-x-scheme-handler/terminal=kitty.desktop
-
-[Added Associations]
+x-scheme-handler/terminal=com.mitchellh.ghostty.desktop

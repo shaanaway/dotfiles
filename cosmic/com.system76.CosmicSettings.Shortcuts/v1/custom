@@ -3,7 +3,7 @@
         modifiers: [
             Super,
         ],
-        key: "g",
+        key: "slash",
     ): Disable,
     (
         modifiers: [
@@ -15,25 +15,7 @@
         modifiers: [
             Super,
         ],
-        key: "slash",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "b",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "v",
-    ): ToggleWindowFloating,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "t",
+        key: "g",
     ): Disable,
     (
         modifiers: [
@@ -46,7 +28,20 @@
             Super,
         ],
         key: "Return",
-    ): System(Terminal),
+        description: Some("Open Terminal"),
+    ): Spawn("ghostty +new-window"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "v",
+    ): ToggleWindowFloating,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "b",
+    ): Disable,
     (
         modifiers: [
             Alt,
