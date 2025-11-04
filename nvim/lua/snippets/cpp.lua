@@ -1,24 +1,26 @@
 local ls = require("luasnip")
-local snip = ls.snippet
-local text = ls.text_node
-local insert = ls.insert_node
-local func = ls.function_node
+local lse = require("luasnip.extras")
+local s = ls.snippet
+local t = ls.text_node
+local i = ls.insert_node
+local f = ls.function_node
+local d = ls.dynamic_node
 
 local function filename()
     return vim.fn.expand("%:t") or "FileName.cpp"
 end
 
 local function today()
-    return os.date("%B %d, %Y") -- e.g. "October 25, 2025"
+    return os.date("%B %d, %Y")
 end
 
 return {
-    snip("compsci", {
-        text({ "/*", " * Program Name: " }),
-        func(filename, {}),
-        text({ "", " * Author:       Gurshaan Sandhu", " * Date:         " }),
-        func(today, {}),
-        text({
+    s("compsci", {
+        t({ "/*", " * Program Name: " }),
+        f(filename, {}),
+        t({ "", " * Author:       Gurshaan Sandhu", " * Date:         " }),
+        f(today, {}),
+        t({
             "",
             " * Course:       COMP 150 -- ON1",
             " * Instructor:   Leon Pan",
@@ -28,9 +30,10 @@ return {
             "",
             "// Purpose: ",
         }),
-        insert(1, "A template for programs"),
-        text({ "", "", "using namespace std;", "", "int main() {", "    " }),
-        text({
+        i(1, "A template for programs"),
+        t({ "", "", "using namespace std;", "", "int main(int argc, char* argv[]) {", "    " }),
+        i(0),
+        t({
             "",
             "#ifdef _WIN32",
             '    system("PAUSE");',
@@ -38,5 +41,19 @@ return {
             "    return EXIT_SUCCESS;",
             "}",
         }),
+    }),
+    s("ternary", {
+        i(1, "cond"),
+        t({ " ? " }),
+        i(2, "true"),
+        t({ " : " }),
+        i(3, "false"),
+    }),
+    s("arrsize", {
+        t("sizeof("),
+        i(1),
+        t({ ") / sizeof(*" }),
+        lse.rep(1),
+        t(")"),
     }),
 }

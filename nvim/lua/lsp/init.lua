@@ -1,7 +1,6 @@
-require("plugins.blink")
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
--- If language server needs more complex config put it below
-local servers = { "clangd", "rust_analyzer", "pyright", "tsserver", "jdtls" }
+-- this just sets the default capabilities with blink.cmp
+-- if you need something bigger scroll down
+local servers = { "clangd", "rust_analyzer", "teal_ls" }
 local capabilities = require("blink.cmp").get_lsp_capabilities()
 for _, lsp in ipairs(servers) do
     vim.lsp.config(lsp, {
@@ -35,12 +34,11 @@ vim.lsp.config("lua_ls", {
                 },
             },
             -- Make the server aware of Neovim runtime files
+            -- lazydev.nvim for plugin runtime files
             workspace = {
                 checkThirdParty = false,
                 library = {
                     vim.env.VIMRUNTIME,
-                    "${3rd}/luv/library",
-                    vim.fn.stdpath("data") .. "/lazy",
                 },
             },
         })

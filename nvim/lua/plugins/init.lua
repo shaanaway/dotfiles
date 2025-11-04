@@ -5,7 +5,6 @@ return {
     { "nvim-lualine/lualine.nvim", opts = { options = { theme = "catppuccin" } } }, -- better status bar
 
     "mbbill/undotree", -- better undo, i :heart_hands: vimscript
-    { "nvim-mini/mini.pairs", version = false, opts = {} },
     "rcarriga/nvim-notify",
     {
         "folke/which-key.nvim",
@@ -31,17 +30,20 @@ return {
     {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
-        opts = {},
+        opts = { indent = { char = "│" } },
     },
     {
         "akinsho/bufferline.nvim",
         version = "*",
         dependencies = "nvim-tree/nvim-web-devicons",
         opts = function()
-            return { highlights = require("catppuccin.special.bufferline").get_theme() }
+            return {
+                highlights = require("catppuccin.special.bufferline").get_theme(),
+                options = { mode = "tabs" },
+            }
         end,
     },
-    { "MeanderingProgrammer/render-markdown.nvim" },
+    { "MeanderingProgrammer/render-markdown.nvim", opts = { latex = { enabled = false } } },
     { "tadmccorkle/markdown.nvim", event = "VeryLazy", opts = {} },
     "unblevable/quick-scope", -- 'f' helper
     -- typing trainer

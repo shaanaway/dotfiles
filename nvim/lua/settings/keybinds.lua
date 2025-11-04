@@ -1,6 +1,4 @@
 -- stuffs
-local notify = require("notify")
-local builtin = require("telescope.builtin")
 local function change_working_dir()
     vim.api.nvim_set_current_dir(vim.fn.expand("%:p:h"))
 end
@@ -10,7 +8,7 @@ local function project_root()
     if root then
         return vim.fs.dirname(root)
     else
-        return vim.loop.cwd()
+        return vim.uv.cwd()
     end
 end
 
@@ -19,9 +17,10 @@ vim.keymap.set("n", "<C-d>", "Lzz", { desc = "Scroll down" })
 vim.keymap.set("n", "<C-u>", "Hzz", { desc = "Scroll up" })
 vim.keymap.set("v", "s", ":'<,'>sort<CR>", { noremap = true, silent = true, desc = "Sort selection" })
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Undo Tree" })
-vim.keymap.set("n", "<leader>d", notify.dismiss, { desc = "Dismiss notifications" })
 vim.keymap.set("n", "<M-j>", ":bprev<CR>", { desc = "Previous Buffer", silent = true })
 vim.keymap.set("n", "<M-k>", ":bnext<CR>", { desc = "Next Buffer", silent = true })
+vim.keymap.set("n", "<M-h>", ":tabprev<CR>", { desc = "Previous Tab", silent = true })
+vim.keymap.set("n", "<M-l>", ":tabnext<CR>", { desc = "Next Tab", silent = true })
 vim.keymap.set("n", "<leader>x", ":bdelete<CR>", { desc = "Delete Buffer" })
 vim.keymap.set("n", "<leader>cd", change_working_dir, { desc = "Change dir" })
 vim.keymap.set("n", "<leader>(", function()
@@ -31,13 +30,31 @@ vim.keymap.set("n", "<leader>(", function()
     end
 end, { desc = "Toggle auto-pairing" })
 
--- TELESCOPE
+local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Search files" })
 vim.keymap.set("n", "<leader>fF", function()
     builtin.find_files({ cwd = project_root() })
 end, { desc = "Search files (repo)" })
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Search file contents" })
 vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "Search buffers" })
+vim.keymap.set("n", "<space>n", function()
+    require("conform").format({ async = true })
+end, { desc = "Format buffer" })
+
+-- debugging
+local dap = require("dap")
+local dapui = require("dapui")
+vim.keymap.set("n", "<F5>", dap.continue, { desc = "Start/Continue Debug" })
+vim.keymap.set("n", "<Down>", dap.step_over, { desc = "Step Over" })
+vim.keymap.set("n", "<Right>", dap.step_into, { desc = "Step Into" })
+vim.keymap.set("n", "<Left>", dap.step_out, { desc = "Step Out" })
+vim.keymap.set("n", "<Leader>b", dap.toggle_breakpoint, { desc = "Toggle Breakpoint" })
+vim.keymap.set("n", "<Leader>B", function()
+    dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
+end, { desc = "Conditional Breakpoint" })
+vim.keymap.set("n", "<Leader>dr", dap.repl.open, { desc = "Open DAP REPL" })
+vim.keymap.set("n", "<Leader>dl", dap.run_last, { desc = "Run Last" })
+vim.keymap.set("n", "<Leader>du", dapui.toggle, { desc = "Toggle DAP UI" })
 
 -- LSP servers are set up in lsp/blink.lua
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open diagnostic window" })
@@ -69,8 +86,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, { buffer = ev.buf, desc = "Rename variable" })
         vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, { buffer = ev.buf, desc = "List code actions" })
         vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = ev.buf, desc = "List all references" })
-        vim.keymap.set("n", "<space>n", function()
-            require("conform").format({ async = true })
-        end, { buffer = ev.buf, desc = "Format buffer" })
     end,
 })
