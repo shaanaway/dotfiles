@@ -1,8 +1,52 @@
 theme = dark:Catppuccin Mocha,light:Catppuccin Latte
 font-family = JetBrainsMono Nerd Font
 font-feature = cv10=1,cv02=1,cv06=1,cv08=1,cv07=1,cv11=1
-font-size = 13
+font-size = 11
 font-style = Medium
 
 resize-overlay = never
 window-decoration = none
+confirm-close-surface = false
+# who on gods green earth wants this
+window-inherit-working-directory = false
+working-directory = home
+
+# unbind all the window/tab/split management stuff
+# i want this handled by my window manager and/or tmux
+keybind = ctrl+shift+arrow_left=unbind
+keybind = ctrl+shift+o=unbind
+keybind = alt+digit_3=unbind
+keybind = alt+digit_7=unbind
+keybind = ctrl+alt+arrow_left=unbind
+keybind = alt+f4=unbind
+keybind = alt+7=unbind
+keybind = ctrl+shift+w=unbind
+keybind = ctrl+shift+e=unbind
+keybind = super+ctrl+bracket_right=unbind
+keybind = ctrl+alt+arrow_down=unbind
+keybind = ctrl+tab=unbind
+keybind = super+ctrl+shift+arrow_up=unbind
+keybind = alt+digit_8=unbind
+keybind = ctrl+alt+arrow_right=unbind
+keybind = super+ctrl+shift+arrow_left=unbind
+keybind = alt+digit_2=unbind
+keybind = alt+5=unbind
+keybind = ctrl+page_up=unbind
+keybind = alt+digit_6=unbind
+keybind = alt+digit_4=unbind
+keybind = alt+2=unbind
+keybind = ctrl+alt+arrow_up=unbind
+keybind = ctrl+shift+i=unbind
+keybind = alt+9=unbind
+keybind = ctrl+shift+arrow_right=unbind
+keybind = ctrl+shift+,=unbind
+keybind = alt+digit_1=unbind
+keybind = alt+6=unbind
+keybind = alt+digit_5=unbind
+keybind = ctrl+shift+tab=unbind
+keybind = alt+3=unbind
+keybind = ctrl+shift+t=unbind
+keybind = super+ctrl+shift+arrow_right=unbind
+keybind = ctrl+shift+enter=unbind
+keybind = alt+4=unbind
+keybind = alt+8=unbind
