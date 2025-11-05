@@ -52,6 +52,6 @@ if status is-interactive
     alias v="nvim"
     starship init fish | source
     if not set -q TMUX
-        tmux new-session -t 0 \; new-window
+        tmux new-session -t 0
     end
 end

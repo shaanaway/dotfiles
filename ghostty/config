@@ -1,8 +1,10 @@
 theme = dark:Catppuccin Mocha,light:Catppuccin Latte
 font-family = JetBrainsMono Nerd Font
 font-feature = cv10=1,cv02=1,cv06=1,cv08=1,cv07=1,cv11=1
-font-size = 11
+font-size = 15
 font-style = Medium
+background-opacity = 0.5
+#background-opacity-cells = true
 
 resize-overlay = never
 window-decoration = none
@@ -22,6 +24,7 @@ keybind = alt+f4=unbind
 keybind = alt+7=unbind
 keybind = ctrl+shift+w=unbind
 keybind = ctrl+shift+e=unbind
+keybind = super+ctrl+bracket_left=unbind
 keybind = super+ctrl+bracket_right=unbind
 keybind = ctrl+alt+arrow_down=unbind
 keybind = ctrl+tab=unbind
@@ -47,6 +50,7 @@ keybind = ctrl+shift+tab=unbind
 keybind = alt+3=unbind
 keybind = ctrl+shift+t=unbind
 keybind = super+ctrl+shift+arrow_right=unbind
+keybind = super+ctrl+shift+arrow_down=unbind
 keybind = ctrl+shift+enter=unbind
 keybind = alt+4=unbind
 keybind = alt+8=unbind
