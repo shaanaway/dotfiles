@@ -34,9 +34,7 @@ if status is-interactive
     set -g fish_greeting ""
     fish_vi_key_bindings
 
-    abbr --add ufv cd ~/Media/Documents/school/ufv
-    abbr --add code cd ~/.local/clone
-    abbr --add cmd command # \alias doesn't work like in zsh u gotta use this
+    alias c="command"
     alias cat="bat -p"
     alias cp="cp -i"
     alias cpcwd="echo -n \$PWD | wl-copy"
@@ -51,7 +49,4 @@ if status is-interactive
     alias sl="ls"
     alias v="nvim"
     starship init fish | source
-    if not set -q TMUX
-        tmux new-session -t 0
-    end
 end

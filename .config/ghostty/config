@@ -4,7 +4,8 @@ font-feature = cv10=1,cv02=1,cv06=1,cv08=1,cv07=1,cv11=1
 font-size = 15
 font-style = Medium
 background-opacity = 0.5
-#background-opacity-cells = true
+background-opacity-cells = true
+
 
 resize-overlay = never
 window-decoration = none
@@ -13,44 +14,56 @@ confirm-close-surface = false
 window-inherit-working-directory = false
 working-directory = home
 
-# unbind all the window/tab/split management stuff
-# i want this handled by my window manager and/or tmux
-keybind = ctrl+shift+arrow_left=unbind
-keybind = ctrl+shift+o=unbind
-keybind = alt+digit_3=unbind
-keybind = alt+digit_7=unbind
-keybind = ctrl+alt+arrow_left=unbind
-keybind = alt+f4=unbind
+# unbind all the tab/split management stuff
+# also unbinds random functionality idc about
+# e.g. stuff that should be handled by my WM
+keybind = alt+1=unbind
+keybind = alt+2=unbind
+keybind = alt+3=unbind
+keybind = alt+4=unbind
+keybind = alt+5=unbind
+keybind = alt+6=unbind
 keybind = alt+7=unbind
-keybind = ctrl+shift+w=unbind
+keybind = alt+8=unbind
+keybind = alt+9=unbind
+keybind = alt+digit_1=unbind
+keybind = alt+digit_2=unbind
+keybind = alt+digit_3=unbind
+keybind = alt+digit_4=unbind
+keybind = alt+digit_5=unbind
+keybind = alt+digit_6=unbind
+keybind = alt+digit_7=unbind
+keybind = alt+digit_8=unbind
+keybind = alt+f4=unbind
+keybind = ctrl+alt+arrow_down=unbind
+keybind = ctrl+alt+arrow_left=unbind
+keybind = ctrl+alt+arrow_right=unbind
+keybind = ctrl+alt+arrow_up=unbind
+keybind = ctrl+alt+shift+j=unbind
+keybind = ctrl+enter=unbind
+keybind = ctrl+insert=unbind
+keybind = ctrl+page_down=unbind
+keybind = ctrl+page_up=unbind
+keybind = ctrl+shift+arrow_left=unbind
+keybind = ctrl+shift+arrow_right=unbind
 keybind = ctrl+shift+e=unbind
+keybind = ctrl+shift+enter=unbind
+keybind = ctrl+shift+i=unbind
+keybind = ctrl+shift+j=unbind
+keybind = ctrl+shift+n=unbind
+keybind = ctrl+shift+o=unbind
+keybind = ctrl+shift+p=unbind
+keybind = ctrl+shift+page_down=unbind
+keybind = ctrl+shift+page_up=unbind
+keybind = ctrl+shift+q=unbind
+keybind = ctrl+shift+t=unbind
+keybind = ctrl+shift+tab=unbind
+keybind = ctrl+shift+w=unbind
+keybind = ctrl+tab=unbind
 keybind = super+ctrl+bracket_left=unbind
 keybind = super+ctrl+bracket_right=unbind
-keybind = ctrl+alt+arrow_down=unbind
-keybind = ctrl+tab=unbind
-keybind = super+ctrl+shift+arrow_up=unbind
-keybind = alt+digit_8=unbind
-keybind = ctrl+alt+arrow_right=unbind
-keybind = super+ctrl+shift+arrow_left=unbind
-keybind = alt+digit_2=unbind
-keybind = alt+5=unbind
-keybind = ctrl+page_up=unbind
-keybind = alt+digit_6=unbind
-keybind = alt+digit_4=unbind
-keybind = alt+2=unbind
-keybind = ctrl+alt+arrow_up=unbind
-keybind = ctrl+shift+i=unbind
-keybind = alt+9=unbind
-keybind = ctrl+shift+arrow_right=unbind
-keybind = ctrl+shift+,=unbind
-keybind = alt+digit_1=unbind
-keybind = alt+6=unbind
-keybind = alt+digit_5=unbind
-keybind = ctrl+shift+tab=unbind
-keybind = alt+3=unbind
-keybind = ctrl+shift+t=unbind
-keybind = super+ctrl+shift+arrow_right=unbind
 keybind = super+ctrl+shift+arrow_down=unbind
-keybind = ctrl+shift+enter=unbind
-keybind = alt+4=unbind
-keybind = alt+8=unbind
+keybind = super+ctrl+shift+arrow_left=unbind
+keybind = super+ctrl+shift+arrow_right=unbind
+keybind = super+ctrl+shift+arrow_up=unbind
+keybind = super+ctrl+shift+j=unbind
