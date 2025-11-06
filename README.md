@@ -14,3 +14,11 @@ Lots of this config is not portable, but of course feel free to take any snippet
 * Neovim
 * Fish
 * Whatever else piques my interest at any given time
+
+## Installation
+These files are managed with [GNU Stow](https://www.gnu.org/software/stow/)
+``` sh
+git clone https://github.com/shaanaway/dotfiles ~/dotfiles
+cd ~/dotfiles
+stow .
+```
