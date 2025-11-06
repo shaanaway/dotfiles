@@ -1,13 +1,47 @@
 {
     "layer": "top",
-    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+    "margin-top": 10,
+    "margin-left": 10,
+    "margin-right": 10,
+    "modules-left": ["custom/logo", "custom/right_div#1", "hyprland/workspaces", "custom/right_div#2"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["battery", "clock"],
+    "modules-right": ["custom/left_div#2", "battery", "custom/left_div#1", "clock", "custom/left_div#3", "custom/logout"],
     "battery": {
-        "format": "{capacity}% {icon}",
-        // "format-icons": ["", "", "", "", ""]
+        "format": "{capacity}% {icon} ",
+        "format-icons": [ "󰂎", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ]
     },
     "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
+        "format": "{:%H:%M}",
+        "format-alt": "{:%a, %d. %b  %H:%M} "
+    },
+    "custom/left_div#1": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/left_div#2": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/left_div#3": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/right_div#1": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/right_div#2": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/logo": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "rofi -show combi"
+    },
+    "custom/logout": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "wlogout"
     }
 }

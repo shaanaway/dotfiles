@@ -1,21 +1,111 @@
+/* catppuccin mocha */
+@define-color rosewater #f5e0dc;
+@define-color flamingo #f2cdcd;
+@define-color pink #f5c2e7;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color maroon #eba0ac;
+@define-color peach #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color teal #94e2d5;
+@define-color sky #89dceb;
+@define-color sapphire #74c7ec;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color text #cdd6f4;
+@define-color subtext1 #bac2de;
+@define-color subtext0 #a6adc8;
+@define-color overlay2 #9399b2;
+@define-color overlay1 #7f849c;
+@define-color overlay0 #6c7086;
+@define-color surface2 #585b70;
+@define-color surface1 #45475a;
+@define-color surface0 #313244;
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
+
 * {
     font-family: JetBrainsMono Nerd Font;
-    font-size: 18px;
+    font-size: 15px;
+    font-weight: bold;
     min-height: 0;
 }
-#waybar {
-    background: transparent;
-    color: #cdd6f7;
-    border: 0px;
-    margin: 5px 5px;
+window#waybar {
+    background: @crust;
+    color: @text;
+    border-radius: 2rem;
 }
 
-#workspaces {
-  border-radius: 1rem;
-  margin: 5px;
-  margin-left: 1rem;
+#custom-right_div,
+#custom-right_inv,
+#custom-left_inv,
+#custom-left_div {
+    font-size: 30px;
 }
 
+
+
+/* left side */
+.modules-left {
+    margin: 0 1rem ;
+}
+
+#custom-logo {
+    margin-right: 0.8rem;
+    color: @blue;
+    font-size: 20px;
+}
+
+#custom-right_div.1 {
+    color: @crust;
+    background-color: @mantle;
+}
+
+#workspaces{
+    background-color: @mantle;
+}
 #workspaces button.active {
-    color: #89b4f8;
+    color: @blue;
+    padding-bottom: 15px;
+}
+
+#custom-right_div.2 {
+    color: @mantle;
+    background-color: @crust;
+}
+
+#custom-logout {
+    color: @blue;
+    margin-right: 0.25rem;
+}
+
+
+/* right side */
+
+.modules-right {
+    margin: 0 1rem ;
+}
+
+#custom-left_div.2 {
+    color: @base;
+}
+
+#battery {
+    background-color: @base;
+}
+
+#custom-left_div.1 {
+    background-color: @base;
+    color: @mantle;
+}
+
+#clock {
+    background-color: @mantle;
+}
+
+#custom-left_div.3 {
+    background-color: @mantle;
+    color: @crust;
 }

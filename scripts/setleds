@@ -1,0 +1,2 @@
+#!/bin/sh
+wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep MUTED && brightnessctl -dhda::micmute set 1 || brightnessctl -dhda::micmute set 0

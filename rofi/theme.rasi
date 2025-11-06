@@ -2,7 +2,7 @@
     separatorcolor:              var(foreground);
     background-color:            transparent;
     spacing:                     2;
-    blue:                        rgba ( 137, 180, 250, 100 % );
+    blue:                        rgba ( 137, 180, 250, 80 % );
     background:                  rgba ( 30, 30, 46, 50% );
     foreground:                  rgba ( 205, 214, 244, 100 % );
     selected-background:         var(blue);
@@ -12,8 +12,9 @@ element {
     padding: 10px;
     border-radius: 30;
     cursor:  pointer;
-    spacing: 5px ;
+    spacing: 5px;
     border:  0;
+    children:   [ element-icon, element-text];
 }
 element normal {
     background-color: var(background-color);
@@ -31,17 +32,10 @@ element-text {
 }
 element-icon {
     background-color: transparent;
-    size:             1.0000em ;
+    size:             1em;
     cursor:           inherit;
     text-color:       inherit;
 }
-// window {
-//     padding:          20;
-//     background-color: var(background);
-//     border-radius:    25;
-//     width:            750;
-//     height:           500;
-// }
 window {
     fullscreen: true;
     transparency: "real";
@@ -53,13 +47,14 @@ mainbox {
      padding:          20;
      //background-color: var(background);
      border-radius:    25;
-     margin:           40% 25%;
+     margin:           20% 30%;
 }
 textbox {
     text-color: var(foreground);
 }
 listview {
     padding:      2px 0px 0px ;
+    columns: 2;
     scrollbar:    false;
     //border-color: var(separatorcolor);
     spacing:      2px ;
@@ -106,7 +101,7 @@ inputbar {
     border:            3px;
     border-radius:     25px;
     text-color: var(foreground);
-    children:   [ "prompt","textbox-prompt-colon","entry","overlay","case-indicator" ];
+    children:   [ "entry","overlay","case-indicator" ];
 }
 overlay {
     padding:          0px 0.2000em ;
@@ -124,15 +119,6 @@ entry {
     cursor:            text;
     spacing:           0;
     placeholder-color: Gray;
-    placeholder:       "Search";
-}
-prompt {
-    spacing:    0;
-    text-color: var(foreground);
-}
-textbox-prompt-colon {
-    margin:     0px 0.3000em 0.0000em 0.0000em ;
-    expand:     false;
-    str:        " ";
-    text-color: inherit;
+    horizontal-align: 0.48;
+    placeholder:       "";
 }
