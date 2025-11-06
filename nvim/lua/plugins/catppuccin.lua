@@ -14,11 +14,6 @@ return {
         styles = {
             comments = { "italic" },
         },
-        custom_highlights = function(colors)
-            return {
-                CursorLine = { bg = "#313244" },
-            }
-        end,
         auto_integrations = true,
     },
     init = function()

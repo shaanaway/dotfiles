@@ -46,6 +46,5 @@ return {
     { "MeanderingProgrammer/render-markdown.nvim", opts = { latex = { enabled = false } } },
     { "tadmccorkle/markdown.nvim", event = "VeryLazy", opts = {} },
     "unblevable/quick-scope", -- 'f' helper
-    -- typing trainer
     "neovim/nvim-lspconfig", -- LSP defaults
 }

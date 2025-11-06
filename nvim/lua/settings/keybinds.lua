@@ -56,6 +56,23 @@ vim.keymap.set("n", "<Leader>dr", dap.repl.open, { desc = "Open DAP REPL" })
 vim.keymap.set("n", "<Leader>dl", dap.run_last, { desc = "Run Last" })
 vim.keymap.set("n", "<Leader>du", dapui.toggle, { desc = "Toggle DAP UI" })
 
+-- replace #rrggbb with rgb(r, g, b)
+vim.keymap.set("n", "<leader>cc", function()
+    local hex = vim.fn.expand("<cWORD>")
+    local match = hex:match("^#(%x%x%x%x%x%x)$")
+    if not match then
+        vim.notify("No hex colour (#rrggbb) under cursor: " .. hex, vim.log.levels.WARN)
+        return
+    end
+    local r = tonumber(match:sub(1, 2), 16)
+    local g = tonumber(match:sub(3, 4), 16)
+    local b = tonumber(match:sub(5, 6), 16)
+
+    local line = vim.api.nvim_get_current_line()
+    local new_line = line:gsub("#" .. match, string.format("rgb(%d, %d, %d)", r, g, b))
+    vim.api.nvim_set_current_line(new_line)
+end, { desc = "Convert hex color to rgb()", noremap = true, silent = true })
+
 -- LSP servers are set up in lsp/blink.lua
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open diagnostic window" })
 vim.keymap.set("n", "[d", function()

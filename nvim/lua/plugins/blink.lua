@@ -1,6 +1,18 @@
 ---@type LazySpec
 return {
     {
+        "folke/lazydev.nvim",
+        ft = "lua", -- only load on lua files
+        opts = {
+            library = {
+                "lazy.nvim",
+                "nvim-dap-ui",
+                -- Load luvit types when the `vim.uv` word is found
+                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+            },
+        },
+    },
+    {
         "saghen/blink.cmp",
         dependencies = { "L3MON4D3/LuaSnip", version = "2.x" },
 
@@ -21,31 +33,19 @@ return {
             },
             snippets = { preset = "luasnip" },
             sources = {
+                -- add lazydev to your completion providers
                 default = { "lazydev", "lsp", "path", "snippets" },
                 providers = {
                     lazydev = {
                         name = "LazyDev",
                         module = "lazydev.integrations.blink",
+                        score_offset = 100,
                     },
                 },
             },
             fuzzy = { implementation = "prefer_rust_with_warning" },
 
             signature = { enabled = true },
-        },
-    },
-    -- to make lua ls load faster when editing nvim cfg
-    {
-        "folke/lazydev.nvim",
-        ft = "lua", -- only load on lua files
-        opts = {
-            library = {
-                "lazy.nvim",
-                "nvim-dap-ui",
-                -- See the configuration section for more details
-                -- Load luvit types when the `vim.uv` word is found
-                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-            },
         },
     },
 }
