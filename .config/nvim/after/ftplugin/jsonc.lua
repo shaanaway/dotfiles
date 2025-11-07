@@ -1,5 +1,7 @@
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-    pattern = (vim.env.XDG_CONFIG_HOME or (vim.fn.expand("~") .. "/.config")) .. "/waybar/*",
+    pattern = "*/waybar/*.jsonc",
     desc = "Reload waybar when changing config",
-    command = "silent exec '!killall waybar; setsid waybar &'", -- force a full reload
+    callback = function()
+        vim.fn.jobstart({ "sh", "-c", "killall waybar; setsid waybar &" })
+    end,
 })
