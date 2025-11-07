@@ -27,7 +27,7 @@
 @define-color crust #11111b;
 
 * {
-    font-family: JetBrainsMono Nerd Font;
+    font-family: monospace;
     font-size: 15px;
     font-weight: bold;
     min-height: 0;

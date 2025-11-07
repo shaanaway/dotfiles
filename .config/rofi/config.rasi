@@ -2,7 +2,7 @@ configuration {
     modes: ["window", "drun", "nerdy", "combi"];
     combi-modes: ["window", "drun"];
     combi-display-format: "{text}";
-    font: "JetBrainsMono Nerd Font 15";
+    font: "sans-serif 20";
     case-smart: true;
     drun-display-format: "{name}";
     window-format: "{c}";
