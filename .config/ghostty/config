@@ -6,6 +6,7 @@ font-style = Medium
 background-opacity = 0.5
 
 
+quit-after-last-window-closed = false
 resize-overlay = never
 window-decoration = none
 confirm-close-surface = false
