@@ -18,7 +18,15 @@ Lots of this config is not portable, but of course feel free to take any snippet
 ## Installation
 These files are managed with [GNU Stow](https://www.gnu.org/software/stow/)
 ``` sh
-git clone https://github.com/shaanaway/dotfiles ~/dotfiles
-cd ~/dotfiles
-stow .
+git clone https://github.com/shaanaway/dotfiles ~/dots
+cd ~/dots
+
+# reverted by replacing `-R` with `-D`
+stow -t ~/.config -R config
+sudo stow  -t /etc -R etc
+
+# or use the helper
+# revert with unxdg/unetc
+./stow.sh xdg
+./stow.sh etc
 ```
