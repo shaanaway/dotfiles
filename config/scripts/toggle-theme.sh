@@ -2,11 +2,12 @@
 conf_dir="${XDG_CONFIG_HOME:-$HOME/.config}"
 mode=$(gsettings get org.gnome.desktop.interface color-scheme | sed "s/.*-\(.*\)'/\1/g")
 
-case $1 in 
-    dark | mocha) mode=light;;
-    light | latte) mode=dark;;
-    toggle | "") ;;
-    *) >&2 echo "Invalid command: not one of [dark, mocha, light, latte, toggle] and not empty"
+case $1 in
+        dark | mocha) mode=light ;;
+        light | latte) mode=dark ;;
+        toggle | "") ;;
+        *) >&2 echo "Invalid command: not one of [dark, mocha, light, latte, toggle] and not empty" ;;
+esac
 if [ $mode = "dark" ]; then
         new_mode="light"
         flavour="latte"
