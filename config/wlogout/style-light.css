@@ -1,6 +1,6 @@
 /* catppuccin latte */
 @define-color text rgb(76, 79, 105);
-@define-color window rgb(239, 241, 245, 0.50);
+@define-color window rgba(239, 241, 245, 0.50);
 @define-color button rgba(230, 233, 239, 0.7);
 @define-color hover rgba(209, 211, 220, 0.9);
 @define-color blue rgb(30, 102, 245);
