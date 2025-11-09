@@ -1,6 +1,4 @@
 include catppuccin-mocha
 
-#set recolor
 map p recolor
-#set guioptions '' # no gui
-set database "sqlite"
+set recolor-keephue "true"

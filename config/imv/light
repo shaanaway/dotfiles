@@ -1,0 +1,5 @@
+[options]
+overlay = true
+background = eff1f5
+overlay_text_color = 4c4f69
+overlay_background_color = eff1f5

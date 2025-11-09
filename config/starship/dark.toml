@@ -5,9 +5,9 @@ format = """
 [](surface0)\
 $os\
 $username\
-[](bg:blue fg:surface0)\
+[](bg:prev_fg fg:prev_bg)\
 $directory\
-[](fg:blue bg:surface0)\
+[](fg:prev_bg bg:surface0)\
 $time\
 [ ](fg:surface0)\
 $cmd_duration\

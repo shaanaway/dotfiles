@@ -1,0 +1,32 @@
+/* catppuccin latte */
+@define-color text rgb(76, 79, 105);
+@define-color window rgb(239, 241, 245, 0.50);
+@define-color button rgba(230, 233, 239, 0.7);
+@define-color hover rgba(209, 211, 220, 0.9);
+@define-color blue rgb(30, 102, 245);
+
+#lock {
+    background-image: url("/home/shaan/.config/wlogout/icons/latte/lock.svg");
+}
+
+#logout {
+    background-image: url("/home/shaan/.config/wlogout/icons/latte/logout.svg");
+}
+
+#suspend {
+    background-image: url("/home/shaan/.config/wlogout/icons/latte/suspend.svg");
+}
+
+#hibernate {
+    background-image: url("/home/shaan/.config/wlogout/icons/latte/hibernate.svg");
+}
+
+#shutdown {
+    background-image: url("/home/shaan/.config/wlogout/icons/latte/shutdown.svg");
+}
+
+#reboot {
+    background-image: url("/home/shaan/.config/wlogout/icons/latte/reboot.svg");
+}
+
+@import "style-common.css";

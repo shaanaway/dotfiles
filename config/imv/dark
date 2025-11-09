@@ -1,7 +1,5 @@
 [options]
-background = 1e1e2e
 overlay = true
-overlay_font = Monospace:12
+background = 1e1e2e
 overlay_text_color = cdd6f4
 overlay_background_color = 1e1e2e
-overlay_background_alpha = ff

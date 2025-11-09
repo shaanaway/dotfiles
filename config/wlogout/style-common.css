@@ -1,0 +1,27 @@
+* {
+	background-image: none;
+	box-shadow: none;
+}
+
+window {
+	background-color: @window-bg;
+}
+
+button {
+	border-radius: 0;
+	border-color: @blue;
+	text-decoration-color: @text;
+	color: @text;
+	background-color: @button;
+	border-style: solid;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 25%;
+}
+
+button:hover {
+	/* 20% Overlay 2, 80% mantle */
+	background-color: @hover;
+    border-radius: 10rem;
+	outline-style: none;
+}

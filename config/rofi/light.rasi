@@ -1,0 +1,124 @@
+* {
+    separatorcolor:              var(foreground);
+    background-color:            transparent;
+    spacing:                     2;
+    blue:                        rgba ( 30, 102, 245, 80 % );
+    background:                  rgba (239, 241, 245, 50%);
+    foreground:                  rgba ( 76, 76, 105, 100 % );
+    selected-background:         var(blue);
+    selected-foreground:         rgba (239, 241, 245, 100%);
+}
+element {
+    padding: 10px;
+    border-radius: 30;
+    cursor:  pointer;
+    spacing: 5px;
+    border:  0;
+    children:   [ element-icon, element-text];
+}
+element normal {
+    background-color: var(background-color);
+    text-color:       var(foreground);
+}
+element selected {
+    background-color: var(selected-background);
+    text-color:       var(selected-foreground);
+}
+element-text {
+    background-color: transparent;
+    cursor:           inherit;
+    highlight:        inherit;
+    text-color:       inherit;
+}
+element-icon {
+    background-color: transparent;
+    size:             1em;
+    cursor:           inherit;
+    text-color:       inherit;
+}
+window {
+    fullscreen: true;
+    transparency: "real";
+    background-color: var(background);
+    location: center;
+    anchor: center;
+}
+mainbox {
+     padding:          20;
+     //background-color: var(background);
+     border-radius:    25;
+     margin:           20% 30%;
+}
+textbox {
+    text-color: var(foreground);
+}
+listview {
+    padding:      2px 0px 0px ;
+    columns: 2;
+    scrollbar:    false;
+    //border-color: var(separatorcolor);
+    spacing:      2px ;
+    fixed-height: 0;
+    border:       2px dash 0px 0px ;
+}
+scrollbar {
+    width:        4px ;
+    padding:      0;
+    handle-width: 8px ;
+    border:       0;
+    handle-color: var(foreground);
+}
+sidebar {
+    border-color: var(separatorcolor);
+    border:       2px dash 0px 0px ;
+}
+button {
+    cursor:     pointer;
+    spacing:    0;
+    text-color: var(foreground);
+}
+button selected {
+    background-color: var(selected-background);
+    text-color:       var(selected-foreground);
+}
+num-filtered-rows {
+    expand:     false;
+    text-color: Gray;
+}
+num-rows {
+    expand:     false;
+    text-color: Gray;
+}
+textbox-num-sep {
+    expand:     false;
+    str:        "/";
+    text-color: Gray;
+}
+inputbar {
+    padding:           15px ;
+    spacing:           0px ;
+    border-color:      var(blue);
+    border:            3px;
+    border-radius:     25px;
+    text-color: var(foreground);
+    children:   [ "entry","overlay","case-indicator" ];
+}
+overlay {
+    padding:          0px 0.2000em ;
+    background-color: var(foreground);
+    foreground-color: var(background-color);
+    margin:           0px 0.2000em ;
+    text-color:       var(background-color);
+}
+case-indicator {
+    spacing:    0;
+    text-color: var(foreground);
+}
+entry {
+    text-color:        var(foreground);
+    cursor:            text;
+    spacing:           0;
+    placeholder-color: Gray;
+    horizontal-align: 0.48;
+    placeholder:       "";
+}

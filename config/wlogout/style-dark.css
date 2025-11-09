@@ -1,0 +1,32 @@
+/* catppuccin mocha */
+@define-color text rgb(205, 214, 244);
+@define-color window rgba(30, 30, 46, 0.50);
+@define-color button rgba(24, 24, 37, 0.7);
+@define-color hover rgba(48, 50, 66, 0.9);
+@define-color blue rgb(137, 180, 250);
+
+#lock {
+    background-image: url("/home/shaan/.config/wlogout/icons/mocha/lock.svg");
+}
+
+#logout {
+    background-image: url("/home/shaan/.config/wlogout/icons/mocha/logout.svg");
+}
+
+#suspend {
+    background-image: url("/home/shaan/.config/wlogout/icons/mocha/suspend.svg");
+}
+
+#hibernate {
+    background-image: url("/home/shaan/.config/wlogout/icons/mocha/hibernate.svg");
+}
+
+#shutdown {
+    background-image: url("/home/shaan/.config/wlogout/icons/mocha/shutdown.svg");
+}
+
+#reboot {
+    background-image: url("/home/shaan/.config/wlogout/icons/mocha/reboot.svg");
+}
+
+@import "style-common.css";

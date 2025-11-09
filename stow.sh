@@ -9,6 +9,6 @@ case $1 in
         etc) sudo stow -t /etc -R etc ;;
         unxdg) stow -t $conf_dir -D config ;;
         unetc) sudo stow -t /etc -D etc ;;
-        *) >&2 echo -e "valid arguments are:
-${colour}xdg${reset}, ${colour}etc${reset}, ${colour}unxdg${reset}, ${colour}unetc${reset}" ;;
+        *) >&2 printf "valid arguments are:
+${colour}xdg${reset}, ${colour}etc${reset}, ${colour}unxdg${reset}, ${colour}unetc${reset}\n" ;;
 esac
