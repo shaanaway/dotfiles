@@ -31,6 +31,7 @@ ln -sf "${conf_dir}"/imv/${new_mode} "${conf_dir}"/config
 ln -sf "${conf_dir}"/wlogout/style-${new_mode}.css "${conf_dir}"/wlogout/style.css
 ln -sf "${conf_dir}"/btop/themes/${flavour}.theme "${conf_dir}"/btop/themes/theme.theme
 ln -sf "${conf_dir}"/newsboat/${new_mode} "${conf_dir}"/newsboat/theme
+fish -c "set -Ux LS_COLORS \$(vivid generate catppuccin-${flavour})"
 spicetify config color_scheme ${flavour}
 # closes app if running, pauses music
 # uncomment if thats cool otherwise run manually
