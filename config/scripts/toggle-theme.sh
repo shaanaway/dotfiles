@@ -33,7 +33,5 @@ ln -sf "${conf_dir}"/btop/themes/${flavour}.theme "${conf_dir}"/btop/themes/them
 ln -sf "${conf_dir}"/newsboat/${new_mode} "${conf_dir}"/newsboat/theme
 fish -c "set -Ux LS_COLORS \$(vivid generate catppuccin-${flavour})"
 spicetify config color_scheme ${flavour}
-# closes app if running, pauses music
-# uncomment if thats cool otherwise run manually
-#spicetify apply
+spicetify apply -n # Ctrl-Shift-R in spotify to take effect
 sed -i "s/${mode}/${new_mode}/" "${conf_dir}"/bat/config
