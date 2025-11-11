@@ -1,4 +1,4 @@
-include catppuccin-mocha
+include theme
 
 map p recolor
 set recolor-keephue "true"

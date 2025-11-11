@@ -20,6 +20,7 @@ fi
 
 # its like 50/50 on if apps can hot reload
 # of the symlinked ones only hyprland can sigh
+# gsettings-aware apps tend to be better about this
 gsettings set org.gnome.desktop.interface color-scheme "prefer-${new_mode}"
 swww img -t grow --transition-pos 1.0,1.0 --transition-duration 1 "${conf_dir}"/theme/${new_mode}.png
 hyprctl setcursor catppuccin-${flavour}-${new_mode}-cursors 24
@@ -31,6 +32,8 @@ ln -sf "${conf_dir}"/imv/${new_mode} "${conf_dir}"/config
 ln -sf "${conf_dir}"/wlogout/style-${new_mode}.css "${conf_dir}"/wlogout/style.css
 ln -sf "${conf_dir}"/btop/themes/${flavour}.theme "${conf_dir}"/btop/themes/theme.theme
 ln -sf "${conf_dir}"/newsboat/${new_mode} "${conf_dir}"/newsboat/theme
+ln -sf "${conf_dir}"/zathura/catppuccin-${flavour} "${conf_dir}"/zathura/theme
+"${conf_dir}"/scripts/zathura-refresh.sh # suuuuuper hacky but it works
 fish -c "set -Ux LS_COLORS \$(vivid generate catppuccin-${flavour})"
 spicetify config color_scheme ${flavour}
 spicetify apply -n # Ctrl-Shift-R in spotify to take effect
