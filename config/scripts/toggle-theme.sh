@@ -8,7 +8,7 @@ case $1 in
         toggle | "") ;;
         *) >&2 echo "Invalid command: not one of [dark, mocha, light, latte, toggle] and not empty" ;;
 esac
-if [ $mode = "dark" ]; then
+if [ "$mode" = "dark" ]; then
         new_mode="light"
         flavour="latte"
         gsettings set org.gnome.desktop.interface gtk-theme 'catppuccin-latte-blue-standard+default'
