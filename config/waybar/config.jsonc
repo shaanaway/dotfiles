@@ -1,39 +1,167 @@
 {
+    "include": "~/.config/waybar/div.jsonc",
     "reload_style_on_change": true,
     "layer": "top",
     "margin-top": 10,
     "margin-left": 10,
     "margin-right": 10,
-    "modules-left": ["custom/logo", "custom/right_div#1", "hyprland/workspaces", "custom/right_div#2"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["custom/left_div#2", "battery", "custom/left_div#1", "clock", "custom/left_div#3", "custom/logout"],
-    "battery": {
-        "format": "{capacity}% {icon} ",
-        "format-icons": [ "󰂎", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ]
+    "modules-left": [
+        "group/sysinfo",
+        "custom/left_div#1",
+        "hyprland/workspaces",
+        "custom/left_div#2",
+        "hyprland/window",
+        "custom/left_div#3"
+    ],
+    "modules-center": [
+        "custom/logo"
+    ],
+    "modules-right": [
+        "custom/right_div#3",
+        "group/audio",
+        "image#album-art",
+        "mpris",
+        "custom/right_div#2",
+        "group/lights",
+        "custom/right_div#1",
+        "custom/logout"
+    ],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "󰈹",
+            "3": "󰊴",
+            "4": "󰍪",
+            "5": "󰝚",
+            "6": "",
+            "default": ""
+        }
     },
-    "clock": {
-        "format": "{:%H:%M}",
-        "format-alt": "{:%a, %d. %b  %H:%M} "
+    "hyprland/window": {
+        "swap-icon-label": false,
+        "format": "{}",
+        "rewrite": {
+            ".* — Mozilla Firefox": "Firefox",
+            "^Spotify.*": "Spotify",
+            "^$": " 󱢇 "
+        },
+        "separate-outputs": true
     },
-    "custom/left_div#1": {
-        "format": "",
+    "group/lights": {
+        "modules": [
+            "backlight",
+            "backlight/slider"
+        ],
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false
+        }
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "󰃞",
+            "󰃠"
+        ]
+    },
+    "backlight/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+    "group/sysinfo": {
+        "modules": [
+            "custom/info",
+            "group/clockdrawer"
+        ],
+        "orientation": "inherit"
+    },
+    "custom/info": {
+        "format": " "
+    },
+    "group/infostack": {
+        "modules": [
+            "battery#1",
+            "clock#1"
+        ]
+    },
+    "group/clockdrawer": {
+        "modules": [
+            "group/infostack",
+            "clock#2"
+        ],
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500
+        }
+    },
+    "battery#1": {
+        "format": "{icon} {capacity}%",
+        "format-icons": [
+            "󰂎",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
+    },
+    "clock#1": {
+        "format": " {:%H:%M}",
         "tooltip": false
     },
-    "custom/left_div#2": {
-        "format": "",
+    "clock#2": {
+        "format": " {:L%A, %B %d, %Y}",
         "tooltip": false
     },
-    "custom/left_div#3": {
-        "format": "",
-        "tooltip": false
+    "group/audio": {
+        "modules": [
+            "wireplumber",
+            "pulseaudio/slider"
+        ],
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false
+        }
     },
-    "custom/right_div#1": {
-        "format": "",
-        "tooltip": false
+    "wireplumber": {
+        "format": "{icon} {volume}% {format_source}",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+        "format-muted": " {volume}%",
+        "format-source": " ",
+        "format-source-muted": " ",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle; ~/.config/scripts/setleds"
     },
-    "custom/right_div#2": {
-        "format": "",
-        "tooltip": false
+    "image#album-art": {
+        "exec": "~/.config/scripts/album_art.sh",
+        "size": 32,
+        "interval": 30
+    },
+    "mpris": {
+        "ignored-players": [
+            "firefox"
+        ],
+        "format": "{player_icon} {status_icon} {title}",
+        "player-icons": {
+            "default": "▶",
+            "mpv": "",
+            "spotify": ""
+        },
+        "status-icons": {
+            "paused": "⏸",
+            "playing": "󰐊"
+        }
     },
     "custom/logo": {
         "format": "",

@@ -3,6 +3,7 @@ font-family = monospace
 font-size = 15
 font-style = Medium
 background-opacity = 0.5
+title = "Ghostty"
 
 
 quit-after-last-window-closed = false

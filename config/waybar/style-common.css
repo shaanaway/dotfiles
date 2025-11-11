@@ -4,17 +4,30 @@
     font-weight: bold;
     min-height: 0;
 }
+
 window#waybar {
     background: @crust;
     color: @text;
     border-radius: 2rem;
 }
 
+tooltip {
+  background: @base;
+  border: 2px solid @blue;
+}
+
 #custom-right_div,
-#custom-right_inv,
-#custom-left_inv,
 #custom-left_div {
-    font-size: 30px;
+    font-size: 33px; /* also controls window height #hack */
+
+}
+
+#custom-right_div {
+    padding-left: 0.5rem;
+}
+
+#custom-left_div {
+    padding-right: 0.5rem;
 }
 
 
@@ -24,60 +37,172 @@ window#waybar {
     margin: 0 1rem ;
 }
 
+#battery {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+#sysinfo {
+    background-color: @crust;
+    color: @blue;
+}
+
+#custom-info {
+    color: @blue;
+}
+
+#custom-left_div.1 {
+    color: @crust;
+    background-color: @base;
+}
+
+#workspaces {
+    background-color: @base;
+}
+
+#workspaces button.empty {
+    color: @surface2;
+}
+
+#workspaces button.active {
+    color: @blue;
+}
+
+#workspaces button.urgent {
+    background-color: alpha(@red, 0.1);
+    color: @red;
+}
+
+#custom-left_div.2 {
+    color: @base;
+    background-color: @mantle;
+}
+
+#window {
+    background-color: @mantle;
+}
+
+
+#custom-left_div.3 {
+    color: @mantle;
+    background-color: @crust;
+}
+
+/* center */
 #custom-logo {
+    margin-left: 0.8rem;
     margin-right: 0.8rem;
     color: @blue;
     font-size: 20px;
 }
 
-#custom-right_div.1 {
-    color: @crust;
-    background-color: @mantle;
-}
-
-#workspaces{
-    background-color: @mantle;
-}
-#workspaces button.active {
-    color: @blue;
-    padding-bottom: 15px;
-}
-
-#custom-right_div.2 {
-    color: @mantle;
-    background-color: @crust;
-}
-
-#custom-logout {
-    color: @blue;
-    margin-right: 0.25rem;
-}
 
 
 /* right side */
 
 .modules-right {
-    margin: 0 1rem ;
+    margin: 0 0.8rem ;
 }
 
-#custom-left_div.2 {
-    color: @base;
-}
-
-#battery {
-    background-color: @base;
-}
-
-#custom-left_div.1 {
-    background-color: @base;
+#custom-right_div.3 {
+    background-color: @crust;
     color: @mantle;
 }
 
-#clock {
-    background-color: @mantle;
+#audio {
+        background-color: @mantle;
 }
 
-#custom-left_div.3 {
+#wireplumber {
+    color: @red;
+    min-width: 3rem;
+}
+
+#pulseaudio-slider {
+    padding: 0.5rem;
+    margin: 0;
+}
+
+#pulseaudio-slider slider {
+    background-color: @base;
+    border: 2px solid @text;
+    box-shadow: none;
+    min-height: 0;
+    min-width: 0;
+    opacity: 0;
+    background-image: none;
+}
+
+#pulseaudio-slider trough {
+    min-height: 10px;
+    min-width: 80px;
+    border-radius: 5px;
+    background: @crust;
+}
+
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background: @red;
+}
+
+
+#mpris {
     background-color: @mantle;
+    color: @green;
+}
+
+#image.album-art {
+    background-color: @mantle;
+    padding: 0 1rem;
+}
+
+#image.album-art.empty {
+    padding: 0;
+}
+
+#custom-right_div.2 {
+    background-color: @mantle;
+    color: @base;
+}
+
+#lights {
+    background-color: @base;
+}
+
+#backlight {
+    min-width: 3rem;
+}
+
+#backlight-slider slider {
+    min-height: 0;
+    min-width: 0;
+    opacity: 0;
+    background-image: none;
+    box-shadow: none;
+    border: 2px solid @text;
+    background-color: @base;
+}
+
+#backlight-slider trough {
+    min-height: 10px;
+    min-width: 80px;
+    border-radius: 5px;
+    background-color: @crust;
+}
+
+#backlight-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    color: @mauve;
+}
+
+#custom-right_div.1 {
+    background-color: @base;
     color: @crust;
+}
+
+#custom-logout {
+    color: @blue;
+    margin-right: 0.25rem;
 }
