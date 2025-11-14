@@ -13,9 +13,9 @@
         "hyprland/window",
         "custom/left_div#3"
     ],
-    "modules-center": [
-        "custom/logo"
-    ],
+    // "modules-center": [
+    //     "custom/logo"
+    // ],
     "modules-right": [
         "custom/right_div#3",
         "group/audio",
@@ -43,8 +43,9 @@
         "format": "{}",
         "rewrite": {
             ".* — Mozilla Firefox": "Firefox",
+            ".* — Zen Browser": "Zen",
             "^Spotify.*": "Spotify",
-            "^$": " 󱢇 "
+            "^$": "󰄛 "
         },
         "separate-outputs": true
     },

@@ -6,9 +6,8 @@
 }
 
 window#waybar {
-    background: @crust;
+    background: transparent;
     color: @text;
-    border-radius: 2rem;
 }
 
 tooltip {
@@ -34,7 +33,10 @@ tooltip {
 
 /* left side */
 .modules-left {
-    margin: 0 1rem ;
+    margin: 0rem 0rem ;
+    padding: 0rem 1rem ;
+    background: @crust;
+    border-radius: 2rem;
 }
 
 #battery {
@@ -101,7 +103,10 @@ tooltip {
 /* right side */
 
 .modules-right {
-    margin: 0 0.8rem ;
+    margin: 0rem 0rem ;
+    padding: 0rem 1rem ;
+    background: @crust;
+    border-radius: 2rem;
 }
 
 #custom-right_div.3 {
