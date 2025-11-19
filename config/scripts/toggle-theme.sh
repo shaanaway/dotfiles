@@ -51,8 +51,9 @@ ln -sf "${conf_dir}"/newsboat/${new_mode} "${conf_dir}"/newsboat/theme &
 ln -sf "${conf_dir}"/zathura/catppuccin-${flavour} "${conf_dir}"/zathura/theme &
 "${conf_dir}"/scripts/zathura-refresh.sh # suuuuuper hacky but it works
 fish -c "set -Ux LS_COLORS \$(vivid generate catppuccin-${flavour})" &
-spicetify config color_scheme ${flavour} &
+spicetify config color_scheme ${flavour}
 spicetify apply -n & # Ctrl-Shift-R in spotify to take effect
 dunstctl reload "${conf_dir}"/dunst/${flavour} &
 sed -i "s/${mode}/${new_mode}/" "${conf_dir}"/bat/config &
+sed -i "s/${mode}/${new_mode}/" "${conf_dir}"/qt6ct/qt6ct.conf &
 printf %s $new_mode >"${state_dir}"/theme

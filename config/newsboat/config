@@ -2,6 +2,7 @@
 # to avoid sending too many requests
 auto-reload no
 reload-threads 4
+browser zen-browser
 
 cleanup-on-quit yes
 text-width 80

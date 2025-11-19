@@ -7,10 +7,6 @@
         "format": "",
         "tooltip": false
     },
-    "custom/left_div#3": {
-        "format": "",
-        "tooltip": false
-    },
     "custom/right_div#1": {
         "format": "",
         "tooltip": false
@@ -19,16 +15,4 @@
         "format": "",
         "tooltip": false
     },
-    "custom/right_div#3": {
-        "format": "",
-        "tooltip": false
-    },
-    "custom/right_inv": {
-        "format": "",
-        "tooltip": false
-    },
-    "custom/left_inv": {
-        "format": "",
-        "tooltip": false
-    }
 }

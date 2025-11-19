@@ -10,14 +10,9 @@
         "custom/left_div#1",
         "hyprland/workspaces",
         "custom/left_div#2",
-        "hyprland/window",
-        "custom/left_div#3"
+        "hyprland/window"
     ],
-    // "modules-center": [
-    //     "custom/logo"
-    // ],
     "modules-right": [
-        "custom/right_div#3",
         "group/audio",
         "image#album-art",
         "mpris",
@@ -65,7 +60,8 @@
         "format-icons": [
             "󰃞",
             "󰃠"
-        ]
+        ],
+        "on-click": "~/.config/scripts/toggle-theme.sh toggle"
     },
     "backlight/slider": {
         "min": 0,
@@ -100,6 +96,7 @@
     },
     "battery#1": {
         "format": "{icon} {capacity}%",
+        "format-charging": "󱐋{icon} {capacity}%",
         "format-icons": [
             "󰂎",
             "󰁻",
@@ -139,10 +136,11 @@
             "",
             ""
         ],
-        "format-muted": " {volume}%",
+        "format-muted": " {volume}% {format_source}",
         "format-source": " ",
         "format-source-muted": " ",
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle; ~/.config/scripts/setleds"
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle; ~/.config/scripts/setleds"
     },
     "image#album-art": {
         "exec": "~/.config/scripts/album_art.sh",

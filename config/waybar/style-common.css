@@ -35,7 +35,7 @@ tooltip {
 .modules-left {
     margin: 0rem 0rem ;
     padding: 0rem 1rem ;
-    background: @crust;
+    background: @mantle;
     border-radius: 2rem;
 }
 
@@ -45,7 +45,7 @@ tooltip {
 }
 
 #sysinfo {
-    background-color: @crust;
+    background-color: @mantle;
     color: @blue;
 }
 
@@ -54,12 +54,12 @@ tooltip {
 }
 
 #custom-left_div.1 {
-    color: @crust;
-    background-color: @base;
+    color: @mantle;
+    background-color: @crust;
 }
 
 #workspaces {
-    background-color: @base;
+    background-color: @crust;
 }
 
 #workspaces button.empty {
@@ -76,7 +76,7 @@ tooltip {
 }
 
 #custom-left_div.2 {
-    color: @base;
+    color: @crust;
     background-color: @mantle;
 }
 
@@ -84,48 +84,21 @@ tooltip {
     background-color: @mantle;
 }
 
-
-#custom-left_div.3 {
-    color: @mantle;
-    background-color: @crust;
-}
-
-/* center */
-#custom-logo {
-    margin-left: 0.8rem;
-    margin-right: 0.8rem;
-    color: @blue;
-    font-size: 20px;
-}
-
-
-
 /* right side */
 
 .modules-right {
     margin: 0rem 0rem ;
     padding: 0rem 1rem ;
-    background: @crust;
+    background: @mantle;
     border-radius: 2rem;
-}
-
-#custom-right_div.3 {
-    background-color: @crust;
-    color: @mantle;
-}
-
-#audio {
-        background-color: @mantle;
 }
 
 #wireplumber {
     color: @red;
-    min-width: 3rem;
 }
 
 #pulseaudio-slider {
     padding: 0.5rem;
-    margin: 0;
 }
 
 #pulseaudio-slider slider {
@@ -168,11 +141,11 @@ tooltip {
 
 #custom-right_div.2 {
     background-color: @mantle;
-    color: @base;
+    color: @crust;
 }
 
 #lights {
-    background-color: @base;
+    background-color: @crust;
 }
 
 #backlight {
@@ -193,7 +166,7 @@ tooltip {
     min-height: 10px;
     min-width: 80px;
     border-radius: 5px;
-    background-color: @crust;
+    background-color: @mantle;
 }
 
 #backlight-slider highlight {
@@ -203,8 +176,8 @@ tooltip {
 }
 
 #custom-right_div.1 {
-    background-color: @base;
-    color: @crust;
+    background-color: @crust;
+    color: @mantle;
 }
 
 #custom-logout {
