@@ -10,3 +10,4 @@ config/hypr/theme.conf
 config/bat/config
 config/fish/fish_variables
 config/zathura/theme
+config/nvim/lazy-lock.json

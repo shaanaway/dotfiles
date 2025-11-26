@@ -9,7 +9,6 @@ return {
             c = { "clang-format" },
             cpp = { "clang-format" },
             json = { "jq" },
-            jsonc = { "jq" }, -- doesn't work if the file has comments but oh well
         },
         default_format_opts = {
             lsp_format = "fallback",

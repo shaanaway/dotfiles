@@ -7,6 +7,7 @@ return {
             library = {
                 "lazy.nvim",
                 "nvim-dap-ui",
+                "snacks.nvim",
                 -- Load luvit types when the `vim.uv` word is found
                 { path = "${3rd}/luv/library", words = { "vim%.uv" } },
             },

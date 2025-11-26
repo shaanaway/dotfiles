@@ -20,6 +20,8 @@ return {
             },
         },
         explorer = {},
+        lazygit = {},
+        picker = {},
         scroll = {},
         statuscolumn = {},
     },

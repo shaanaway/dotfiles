@@ -1,5 +1,4 @@
-vim.lsp.config("lua_ls", {
-    capabilities = require("blink.cmp").get_lsp_capabilities(),
+return {
     on_init = function(client)
         if client.workspace_folders then
             local path = client.workspace_folders[1].name
@@ -25,11 +24,16 @@ vim.lsp.config("lua_ls", {
                 checkThirdParty = false,
                 library = {
                     vim.env.VIMRUNTIME,
+                    vim.fn.stdpath("data") .. "/lazy/snacks.nvim/lua",
                 },
             },
         })
     end,
     settings = {
-        Lua = {},
+        Lua = {
+            hint = {
+                enable = true,
+            },
+        },
     },
-})
+}

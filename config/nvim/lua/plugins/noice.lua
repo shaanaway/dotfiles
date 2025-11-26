@@ -5,7 +5,7 @@ return {
     opts = {
         lsp = {
             progress = {
-                enabled = false,
+                enabled = true,
             },
             hover = {
                 enabled = true,

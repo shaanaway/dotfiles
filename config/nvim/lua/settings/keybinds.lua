@@ -1,45 +1,31 @@
--- stuffs
-local function change_working_dir()
-    vim.api.nvim_set_current_dir(vim.fn.expand("%:p:h"))
-end
-
-local function project_root()
-    local root = vim.fs.find({ ".git", "Makefile", "package.json" }, { upward = true })[1]
-    if root then
-        return vim.fs.dirname(root)
-    else
-        return vim.uv.cwd()
-    end
-end
-
--- get rid of the cursor centering
-vim.keymap.set("n", "<C-d>", "Lzz", { desc = "Scroll down" })
-vim.keymap.set("n", "<C-u>", "Hzz", { desc = "Scroll up" })
 vim.keymap.set("v", "s", ":'<,'>sort<CR>", { noremap = true, silent = true, desc = "Sort selection" })
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Undo Tree" })
-vim.keymap.set("n", "<M-j>", ":bprev<CR>", { desc = "Previous Buffer", silent = true })
-vim.keymap.set("n", "<M-k>", ":bnext<CR>", { desc = "Next Buffer", silent = true })
-vim.keymap.set("n", "<M-h>", ":tabprev<CR>", { desc = "Previous Tab", silent = true })
-vim.keymap.set("n", "<M-l>", ":tabnext<CR>", { desc = "Next Tab", silent = true })
-vim.keymap.set("n", "<leader>x", ":bdelete<CR>", { desc = "Delete Buffer" })
-vim.keymap.set("n", "<leader>cd", change_working_dir, { desc = "Change dir" })
+vim.keymap.set("n", "<M-j>", ":bprev<CR>", { desc = "Previous buffer", silent = true })
+vim.keymap.set("n", "<M-k>", ":bnext<CR>", { desc = "Next buffer", silent = true })
+vim.keymap.set("n", "<M-h>", ":tabprev<CR>", { desc = "Previous tab", silent = true })
+vim.keymap.set("n", "<M-l>", ":tabnext<CR>", { desc = "Next tab", silent = true })
+vim.keymap.set("n", "<leader>x", ":bdelete<CR>", { desc = "Delete buffer" })
+vim.keymap.set("n", "<leader>cd", function()
+    vim.api.nvim_set_current_dir(vim.fn.expand("%:p:h"))
+end, { desc = "Change working dir to buffer" })
 vim.keymap.set("n", "<leader>(", function()
     vim.g.minipairs_disable = not vim.g.minipairs_disable
     if not vim.g.minipairs_disable then
         require("mini.pairs").setup()
     end
 end, { desc = "Toggle auto-pairing" })
+vim.keymap.set("n", "<leader>h", function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle inlay hints" })
 
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Search files" })
-vim.keymap.set("n", "<leader>fF", function()
-    builtin.find_files({ cwd = project_root() })
-end, { desc = "Search files (repo)" })
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Search file contents" })
-vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "Search buffers" })
-vim.keymap.set("n", "<space>n", function()
-    require("conform").format({ async = true })
-end, { desc = "Format buffer" })
+vim.keymap.set("n", "<leader>md", require("render-markdown").toggle, { desc = "Toggle markdown rendering" })
+
+-- SO much faster than telescope like what
+vim.keymap.set("n", "<leader>fs", Snacks.picker.pickers, { desc = "Search files" })
+vim.keymap.set("n", "<leader>ff", Snacks.picker.files, { desc = "Search files" })
+vim.keymap.set("n", "<leader>fF", Snacks.picker.git_files, { desc = "Search files (repo)" })
+vim.keymap.set("n", "<leader>fg", Snacks.picker.grep, { desc = "Search file contents" })
+vim.keymap.set("n", "<leader>fG", Snacks.picker.git_grep, { desc = "Search file contents" })
+vim.keymap.set("n", "<leader>fb", Snacks.picker.buffers, { desc = "Search buffers" })
 
 -- debugging
 local dap = require("dap")
@@ -110,23 +96,23 @@ vim.keymap.set("n", "]d", function()
     vim.diagnostic.jump({ count = 1, float = true })
 end, { desc = "Go to next diagnostic" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "list diagnostics" })
+vim.keymap.set({ "n" }, "<space>i", function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle inlay hints" })
+vim.keymap.set("n", "<space>n", function()
+    require("conform").format({ async = true })
+end, { desc = "Format buffer" })
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspConfig", {}),
     callback = function(ev)
-        local opts = { buffer = ev.buf }
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = ev.buf, desc = "Go to declaration" })
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = ev.buf, desc = "Go to definition" })
         vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = ev.buf, desc = "Show hover info" })
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = ev.buf, desc = "List all implementations" })
-        vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { buffer = ev.buf, desc = "Show signature info" })
-        vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, { buffer = ev.buf, desc = "Add workspace folder" })
-        vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, { buffer = ev.buf, desc = "Remove workspace folder" })
-        vim.keymap.set("n", "<space>wl", function()
-            print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-        end, opts)
+        vim.keymap.set("n", "<C-s>", vim.lsp.buf.signature_help, { buffer = ev.buf, desc = "Show signature info" })
         vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, { buffer = ev.buf, desc = "Go to type definition" })
         vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, { buffer = ev.buf, desc = "Rename variable" })
         vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, { buffer = ev.buf, desc = "List code actions" })
