@@ -7,6 +7,21 @@ return {
             "nvim-neotest/nvim-nio", -- required by dap-ui
             "theHamsta/nvim-dap-virtual-text",
         },
+        lazy = true,
+        keys = function()
+            local dap = require("dap")
+            local dapui = require("dapui")
+            return {
+                { "<F5>", dap.continue, desc = "Start/Continue Debug" },
+                { "<Down>", dap.step_over, desc = "Step Over" },
+                { "<Right>", dap.step_into, desc = "Step Into" },
+                { "<Left>", dap.step_out, desc = "Step Out" },
+                { "<Leader>b", dap.toggle_breakpoint, desc = "Toggle Breakpoint" },
+                { "<Leader>dr", dap.repl.open, desc = "Open DAP REPL" },
+                { "<Leader>dl", dap.run_last, desc = "Run Last" },
+                { "<Leader>du", dapui.toggle, desc = "Toggle DAP UI" },
+            }
+        end,
         config = function()
             local dap = require("dap")
             local dapui = require("dapui")

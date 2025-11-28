@@ -19,4 +19,8 @@ return {
             lsp_format = "fallback",
         },
     },
+    keys = {
+        { "<space>n", function() require("conform").format({ async = true }) end, desc = "Format buffer" },
+    },
+    lazy = true,
 }

@@ -21,11 +21,6 @@ return {
     "nvim-tree/nvim-web-devicons", -- nerd font tings
     "nvim-treesitter/nvim-treesitter-context", -- shows current function at top of buf
     {
-        "lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
-        opts = { indent = { char = "│" } },
-    },
-    {
         "akinsho/bufferline.nvim",
         version = "*",
         dependencies = "nvim-tree/nvim-web-devicons",
@@ -36,7 +31,6 @@ return {
             }
         end,
     },
-    { "MeanderingProgrammer/render-markdown.nvim", opts = { latex = { enabled = false } } },
     { "tadmccorkle/markdown.nvim", event = "VeryLazy", opts = {} },
     "neovim/nvim-lspconfig", -- LSP defaults
 }
