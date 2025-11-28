@@ -5,7 +5,5 @@ return {
     opts = {
         pairs = { modes = { insert = true, command = true } },
     },
-    config = function(_, opts)
-        require("mini.pairs").setup(opts.pairs)
-    end,
+    config = function(_, opts) require("mini.pairs").setup(opts.pairs) end,
 }

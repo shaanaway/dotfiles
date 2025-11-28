@@ -16,7 +16,5 @@ return {
         },
         auto_integrations = true,
     },
-    init = function()
-        vim.cmd.colorscheme("catppuccin")
-    end,
+    init = function() vim.cmd.colorscheme("catppuccin") end,
 }

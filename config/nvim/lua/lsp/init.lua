@@ -1,9 +1,7 @@
 local function get_server_names(files)
     local names = {}
     for file, type in files do
-        if type ~= "file" or file == "*.lua" then
-            goto continue
-        end
+        if type ~= "file" or file == "*.lua" then goto continue end
         local name = vim.fs.basename(file):gsub(".lua$", "")
         names[#names + 1] = name
         ::continue::

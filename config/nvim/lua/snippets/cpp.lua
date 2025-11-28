@@ -6,13 +6,9 @@ local i = ls.insert_node
 local f = ls.function_node
 local d = ls.dynamic_node
 
-local function filename()
-    return vim.fn.expand("%:t") or "FileName.cpp"
-end
+local function filename() return vim.fn.expand("%:t") or "FileName.cpp" end
 
-local function today()
-    return os.date("%B %d, %Y")
-end
+local function today() return os.date("%B %d, %Y") end
 
 return {
     s("compsci", {
