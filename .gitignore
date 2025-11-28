@@ -7,7 +7,6 @@ config/rofi/theme.rasi
 config/imv/config
 config/aerc/stylesets/theme
 config/hypr/theme.conf
-config/bat/config
 config/fish/fish_variables
 config/zathura/theme
 config/nvim/lazy-lock.json
